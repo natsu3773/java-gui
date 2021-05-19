@@ -17,6 +17,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="475.0" prefWidth="970.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
     <left>
@@ -27,6 +28,12 @@
          <children>
             <StackPane prefHeight="39.0" prefWidth="847.0" HBox.hgrow="ALWAYS">
                <children>
+                  <TextField fx:id="Searchbar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#Search" prefHeight="25.0" prefWidth="175.0" promptText="Search" StackPane.alignment="CENTER_RIGHT">
+                     <StackPane.margin>
+                        <Insets right="30.0" />
+                     </StackPane.margin>
+                  </TextField>
+                  <Label fx:id="LoggedStatus" text="Label" visible="false" />
                   <MenuBar fx:id="mainMB" prefHeight="39.0" prefWidth="841.0">
                     <menus>
                       <Menu fx:id="fileMenu" mnemonicParsing="false" text="File">
@@ -47,12 +54,6 @@
                       </Menu>
                     </menus>
                   </MenuBar>
-                  <TextField fx:id="Searchbar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#Search" prefHeight="25.0" prefWidth="175.0" promptText="Search" StackPane.alignment="CENTER_RIGHT">
-                     <StackPane.margin>
-                        <Insets right="30.0" />
-                     </StackPane.margin>
-                  </TextField>
-                  <Label fx:id="LoggedStatus" text="Label" visible="false" />
                </children>
             </StackPane>
          </children>
@@ -91,46 +92,169 @@
         <tabs>
           <Tab text="Customer Info">
             <content>
-              <AnchorPane>
+              <AnchorPane prefHeight="381.0" prefWidth="799.0">
                      <children>
-                        <TableView fx:id="tblView" prefHeight="317.0" prefWidth="799.0" AnchorPane.bottomAnchor="51.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                          <columns>
-                            <TableColumn fx:id="MainCustID" prefWidth="113.0" text="Customer ID" />
-                            <TableColumn fx:id="MainCustFName" prefWidth="124.0" text="First Name" />
-                              <TableColumn fx:id="MainCustLName" prefWidth="102.0" text="Last Name" />
-                              <TableColumn prefWidth="102.0" text="Phone No" />
-                              <TableColumn prefWidth="101.0" text="Email Address" />
-                              <TableColumn prefWidth="75.0" text="Age" />
-                              <TableColumn prefWidth="75.0" text="Ethnicity" />
-                              <TableColumn prefWidth="106.0" text="Nationality" />
-                          </columns>
-                        </TableView>
-                        <Button layoutX="596.0" layoutY="328.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="76.0" text="Edit" textAlignment="CENTER" />
-                        <Button layoutX="684.0" layoutY="328.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="77.0" text="Delete" textAlignment="CENTER" />
-                        <Button layoutX="504.0" layoutY="328.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" text="New" />
+                        <VBox prefHeight="372.8" prefWidth="799.2" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <TableView fx:id="tblView" prefHeight="312.0" prefWidth="799.0" VBox.vgrow="ALWAYS">
+                                <columns>
+                                  <TableColumn fx:id="MainCustID" prefWidth="113.0" text="Customer ID" />
+                                  <TableColumn fx:id="MainCustFName" prefWidth="124.0" text="First Name" />
+                                    <TableColumn fx:id="MainCustLName" prefWidth="102.0" text="Last Name" />
+                                    <TableColumn prefWidth="102.0" text="Phone No" />
+                                    <TableColumn prefWidth="101.0" text="Email Address" />
+                                    <TableColumn prefWidth="75.0" text="Age" />
+                                    <TableColumn prefWidth="75.0" text="Ethnicity" />
+                                    <TableColumn prefWidth="106.0" text="Nationality" />
+                                </columns>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </TableView>
+                              <VBox fillWidth="false">
+                                 <children>
+                                    <HBox fillHeight="false" spacing="10.0">
+                                       <children>
+                                          <Button fx:id="AddCustomer" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onAddCustomer" prefHeight="30.0" prefWidth="80.0" text="New" />
+                                          <Button fx:id="EditCustomer" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onEditCustomer" prefHeight="30.0" prefWidth="76.0" snapToPixel="false" text="Edit" textAlignment="CENTER" />
+                                          <Button fx:id="DeleteCustomer" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onDeleteCustomer" prefHeight="30.0" prefWidth="77.0" text="Delete" textAlignment="CENTER" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets left="480.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="2.0" top="2.0" />
+                                 </VBox.margin>
+                              </VBox>
+                           </children>
+                        </VBox>
                      </children>
                   </AnchorPane>
             </content>
           </Tab>
+            <Tab text="Address Info">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox prefHeight="372.8" prefWidth="799.2" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <TableView fx:id="tblViewAddress" prefHeight="312.0" prefWidth="799.0" VBox.vgrow="ALWAYS">
+                                 <columns>
+                                    <TableColumn fx:id="MainCustID1" prefWidth="113.0" text="Address ID" />
+                                    <TableColumn fx:id="MainCustFName2" prefWidth="124.0" text="House Number" />
+                                    <TableColumn fx:id="MainCustLName2" prefWidth="102.0" text="Street " />
+                                    <TableColumn prefWidth="102.0" text="Suburb" />
+                                    <TableColumn prefWidth="101.0" text="Province" />
+                                    <TableColumn prefWidth="75.0" text="PostalCode" />
+                                 </columns>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </TableView>
+                              <VBox fillWidth="false">
+                                 <children>
+                                    <HBox fillHeight="false" spacing="10.0">
+                                       <children>
+                                          <Button fx:id="AddAddress" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onAddAddress" prefHeight="30.0" prefWidth="80.0" text="New" />
+                                          <Button fx:id="EditAddress" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onEditAddress" prefHeight="30.0" prefWidth="76.0" snapToPixel="false" text="Edit" textAlignment="CENTER" />
+                                          <Button fx:id="DeleteAddress" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onDeleteAddress" prefHeight="30.0" prefWidth="77.0" text="Delete" textAlignment="CENTER" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets left="480.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="2.0" top="2.0" />
+                                 </VBox.margin>
+                              </VBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Financial Info">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox prefHeight="372.8" prefWidth="799.2" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <TableView fx:id="tblView3" prefHeight="312.0" prefWidth="799.0" VBox.vgrow="ALWAYS">
+                                 <columns>
+                                    <TableColumn fx:id="MainCustID2" prefWidth="113.0" text="FInancial ID" />
+                                    <TableColumn fx:id="MainCustLName3" prefWidth="102.0" text="Gross Incme" />
+                                    <TableColumn fx:id="MainCustFName3" prefWidth="124.0" text="Net Income" />
+                                    <TableColumn prefWidth="102.0" text="Expenses" />
+                                    <TableColumn prefWidth="101.0" text="Credit Score" />
+                                    <TableColumn prefWidth="75.0" text="Account No" />
+                                 </columns>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </TableView>
+                              <VBox fillWidth="false">
+                                 <children>
+                                    <HBox fillHeight="false" spacing="10.0">
+                                       <children>
+                                          <Button fx:id="AddFinancialRecord" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onAddFinancialRecord" prefHeight="30.0" prefWidth="80.0" text="New" />
+                                          <Button fx:id="EditFinancialRecord" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onEditFinancialRecord" prefHeight="30.0" prefWidth="76.0" snapToPixel="false" text="Edit" textAlignment="CENTER" />
+                                          <Button fx:id="DeleteFinancialRecord" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onDeleteFinancialRecord" prefHeight="30.0" prefWidth="77.0" text="Delete" textAlignment="CENTER" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets left="480.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="2.0" top="2.0" />
+                                 </VBox.margin>
+                              </VBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
             <Tab text="Loans">
                <content>
                   <AnchorPane>
                      <children>
-                        <TableView fx:id="tblView1" prefHeight="317.0" prefWidth="799.0" AnchorPane.bottomAnchor="51.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                           <columns>
-                              <TableColumn fx:id="LoanID" prefWidth="113.0" text="LoanID" />
-                              <TableColumn fx:id="MainCustFName1" prefWidth="124.0" text="LoanType" />
-                              <TableColumn fx:id="MainCustLName1" prefWidth="102.0" text="Loan Amount" />
-                              <TableColumn prefWidth="102.0" text="C4" />
-                              <TableColumn prefWidth="101.0" text="C5" />
-                              <TableColumn prefWidth="75.0" text="C6" />
-                              <TableColumn prefWidth="75.0" text="C7" />
-                              <TableColumn prefWidth="106.0" text="C8" />
-                           </columns>
-                        </TableView>
-                        <Button layoutX="596.0" layoutY="328.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="76.0" text="Edit" textAlignment="CENTER" />
-                        <Button layoutX="684.0" layoutY="328.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="77.0" text="Delete" textAlignment="CENTER" />
-                        <Button layoutX="504.0" layoutY="328.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" text="New" />
+                        <VBox prefHeight="372.8" prefWidth="799.2" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <TableView fx:id="tblView1" prefHeight="346.0" prefWidth="799.0" VBox.vgrow="ALWAYS">
+                                 <columns>
+                                    <TableColumn fx:id="LoanID" prefWidth="93.59997862577438" text="LoanID" />
+                                    <TableColumn fx:id="MainCustFName1" prefWidth="102.4000244140625" text="LoanType" />
+                                    <TableColumn fx:id="MainCustLName1" prefWidth="114.40000915527344" text="Loan Status" />
+                                    <TableColumn prefWidth="120.0" text="Loan Amount" />
+                                    <TableColumn prefWidth="87.20001220703125" text="Loan Period" />
+                                    <TableColumn prefWidth="106.4000244140625" text="Monthly Charge" />
+                                    <TableColumn prefWidth="75.199951171875" text="CustomerID" />
+                                    <TableColumn prefWidth="101.0" text="Surity ID" />
+                                 </columns>
+                              </TableView>
+                              <VBox fillWidth="false" prefHeight="38.0" prefWidth="250.0">
+                                 <children>
+                                    <HBox spacing="10.0">
+                                       <children>
+                                          <Button fx:id="AddLoan" mnemonicParsing="false" onAction="#onAddLoan" prefHeight="30.0" prefWidth="80.0" text="New" />
+                                          <Button fx:id="EditLoan" mnemonicParsing="false" onAction="#onEditLoan" prefHeight="30.0" prefWidth="76.0" text="Edit" textAlignment="CENTER" />
+                                          <Button fx:id="DeleteLoan" mnemonicParsing="false" onAction="#onDeleteLoan" prefHeight="30.0" prefWidth="77.0" text="Delete" textAlignment="CENTER" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets left="480.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="2.0" top="2.0" />
+                                 </VBox.margin>
+                              </VBox>
+                           </children>
+                        </VBox>
                      </children>
                   </AnchorPane>
                </content>
