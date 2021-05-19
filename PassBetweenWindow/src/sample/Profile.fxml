@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane prefHeight="275.0" prefWidth="485.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ProfileController">
+   <children>
+      <GridPane alignment="CENTER" hgap="10.0" layoutX="126.0" layoutY="72.0" prefHeight="80.0" prefWidth="251.0" vgap="20.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="128.0" minWidth="10.0" prefWidth="103.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="164.0" minWidth="10.0" prefWidth="164.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Username" textAlignment="CENTER" wrapText="true" />
+            <Label text="Password" textAlignment="CENTER" wrapText="true" GridPane.rowIndex="1" />
+            <TextField prefHeight="30.0" prefWidth="121.0" promptText="Username" GridPane.columnIndex="1" />
+            <PasswordField promptText="Password" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+      <Button fx:id="SubmitUpdateProfile" layoutX="115.0" layoutY="201.0" mnemonicParsing="false" onAction="#onUpdateProfile" prefHeight="30.0" prefWidth="103.0" text="SUBMIT" />
+      <Button fx:id="UpdateProfileCancel" layoutX="259.0" layoutY="201.0" mnemonicParsing="false" onAction="#onUpdateProfileCancel" prefHeight="30.0" prefWidth="118.0" text="CANCEL" />
+   </children>
+</AnchorPane>

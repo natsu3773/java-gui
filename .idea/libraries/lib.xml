@@ -1,0 +1,29 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/PassBetweenWindow/lib/javafx-base-13-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PassBetweenWindow/lib/javafx-base-13-win.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PassBetweenWindow/lib/javafx-base-13.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PassBetweenWindow/lib/javafx-fxml-13-win.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PassBetweenWindow/lib/javafx-controls-13-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PassBetweenWindow/lib/javafx-graphics-13-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PassBetweenWindow/lib/javafx-fxml-13-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PassBetweenWindow/lib/javafx-graphics-13-win.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PassBetweenWindow/lib/javafx-graphics-13-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PassBetweenWindow/lib/javafx-controls-13.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PassBetweenWindow/lib/javafx-graphics-13.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PassBetweenWindow/lib/javafx-base-13-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PassBetweenWindow/lib/javafx-fxml-13-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PassBetweenWindow/lib/javafx-controls-13-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PassBetweenWindow/lib/javafx-controls-13-win.jar!/" />
+      <root url="jar://$PROJECT_DIR$/PassBetweenWindow/lib/javafx-fxml-13.jar!/" />
+      <root url="file://$USER_HOME$/Downloads/openjfx-16_windows-x64_bin-sdk/javafx-sdk-16/lib" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$USER_HOME$/Downloads/openjfx-16_windows-x64_bin-sdk/javafx-sdk-16/lib" />
+    </SOURCES>
+    <jarDirectory url="file://$USER_HOME$/Downloads/openjfx-16_windows-x64_bin-sdk/javafx-sdk-16/lib" recursive="false" />
+    <jarDirectory url="file://$USER_HOME$/Downloads/openjfx-16_windows-x64_bin-sdk/javafx-sdk-16/lib" recursive="false" type="SOURCES" />
+  </library>
+</component>
