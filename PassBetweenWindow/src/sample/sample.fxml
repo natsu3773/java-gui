@@ -103,7 +103,7 @@
                                     <TableColumn fx:id="MainCustLName" prefWidth="102.0" text="Last Name" />
                                     <TableColumn prefWidth="102.0" text="Phone No" />
                                     <TableColumn prefWidth="101.0" text="Email Address" />
-                                    <TableColumn prefWidth="75.0" text="Age" />
+                                    <TableColumn prefWidth="75.0" text="Date of Birth" />
                                     <TableColumn prefWidth="75.0" text="Ethnicity" />
                                     <TableColumn prefWidth="106.0" text="Nationality" />
                                 </columns>
