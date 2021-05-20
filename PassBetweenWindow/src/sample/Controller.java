@@ -17,7 +17,6 @@ import java.net.URL;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
-
 public class Controller implements Initializable {
     // variables to use in initialization section
     public Label lblTime;
@@ -95,6 +94,7 @@ public class Controller implements Initializable {
                 stage.setTitle("Edit Profie");
                 stage.setScene(scene);
                 stage.show();
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
