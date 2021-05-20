@@ -2,6 +2,9 @@ package sample;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableArray;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,9 +23,16 @@ import java.util.*;
 public class Controller implements Initializable {
     // variables to use in initialization section
     public Label lblTime;
-    @FXML private Label lblSystemState;
     public Timeline timeline;
+    @FXML private Label lblSystemState;
+    @FXML private TableView tblCustomerView;
+
    @FXML private Label LoggedStatus;
+
+        ObservableList<Client> clients = FXCollections.observableArrayList(
+                new Client("John", "Snow","Chilli")
+        );
+
 
     public void setLoginStatus(){
 
