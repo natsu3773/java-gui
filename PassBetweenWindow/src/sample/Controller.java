@@ -60,6 +60,7 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         //once fxml has been parsed this will run on a thread that can access the JavaFX thread.
         /*
          the next 3 lines create what is essentially an animation that updates every second and gets shown on screen
