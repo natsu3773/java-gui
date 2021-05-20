@@ -21,12 +21,13 @@ import java.util.*;
 public class Controller implements Initializable {
     // variables to use in initialization section
     public Label lblTime;
-    public Label lblSystemState;
+    @FXML private Label lblSystemState;
     public Timeline timeline;
    @FXML private Label LoggedStatus;
 
-    public void setLoginStatus(String status){
-        LoggedStatus.setText(status);
+    public void setLoginStatus(){
+
+        LoggedStatus.setText("true");
         System.out.println("Logged in: " + LoggedStatus.getText());
     }
 
@@ -74,30 +75,30 @@ public class Controller implements Initializable {
         timeline.play();
 
         //set defaults of online status an login status
-        lblSystemState.setText("Status: Online");
-        LoggedStatus.setText("false");
+        if(LoggedStatus.getText() == "true"){
+            lblSystemState.setText("Status: Logged In");
+        }else {
+            lblSystemState.setText("Status: Online");
+
+        };
     }
 
     public void onEditProfile(ActionEvent actionEvent) {
         //Gets the contents from the fxml and displays it onto a new window focus on the new popup window.
+         FXMLLoader fxmlLoader  = new FXMLLoader(getClass().getResource("Profile.fxml"));
+            try {
+             Parent parent = fxmlLoader.load();
+                Scene scene = new Scene(parent);
+                Stage stage = new Stage();
+                //Blocks other interactions before it is dealt with.
+                stage.initModality(Modality.APPLICATION_MODAL);
+                stage.setTitle("Edit Profie");
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Profile.fxml"));
-        Parent parent = null;
-        try {
-            parent = fxmlLoader.load();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        Scene scene = new Scene(parent);
-
-        Stage stage = new Stage();
-        //Blocks other interactions before it is dealt with.
-        stage.initModality(Modality.APPLICATION_MODAL);
-        stage.setTitle("Edit Profile");
-        stage.setScene(scene);
-        stage.show();
-        //Defensively consume the event after handling
-        actionEvent.consume();
     }
 
     public void onAboutClick(ActionEvent actionEvent) {
@@ -138,5 +139,41 @@ public class Controller implements Initializable {
         stage.show();
         //Defensively consume the event after handling
         actionEvent.consume();
+    }
+
+    public void onAddCustomer(ActionEvent actionEvent) {
+    }
+
+    public void onEditCustomer(ActionEvent actionEvent) {
+    }
+
+    public void onDeleteCustomer(ActionEvent actionEvent) {
+    }
+
+    public void onAddAddress(ActionEvent actionEvent) {
+    }
+
+    public void onEditAddress(ActionEvent actionEvent) {
+    }
+
+    public void onDeleteAddress(ActionEvent actionEvent) {
+    }
+
+    public void onAddFinancialRecord(ActionEvent actionEvent) {
+    }
+
+    public void onEditFinancialRecord(ActionEvent actionEvent) {
+    }
+
+    public void onDeleteFinancialRecord(ActionEvent actionEvent) {
+    }
+
+    public void onAddLoan(ActionEvent actionEvent) {
+    }
+
+    public void onEditLoan(ActionEvent actionEvent) {
+    }
+
+    public void onDeleteLoan(ActionEvent actionEvent) {
     }
 }
