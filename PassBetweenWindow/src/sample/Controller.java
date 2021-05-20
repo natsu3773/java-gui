@@ -29,10 +29,6 @@ public class Controller implements Initializable {
 
    @FXML private Label LoggedStatus;
 
-        ObservableList<Client> clients = FXCollections.observableArrayList(
-                new Client("John", "Snow","Chilli")
-        );
-
 
     public void setLoginStatus(){
 
