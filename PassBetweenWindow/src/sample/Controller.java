@@ -80,7 +80,6 @@ public class Controller implements Initializable {
         }else {
             lblSystemState.setText("Status: Online");
 
-            LoggedStatus.setText("false");
         };
     }
 
