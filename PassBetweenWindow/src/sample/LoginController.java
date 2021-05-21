@@ -26,6 +26,8 @@ public class LoginController {
             stage.close();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("sample.fxml"));
             Parent parent = loader.load();
+
+            stage.setScene(parent.getScene());
             Controller con = loader.getController();
             con.setLoginStatus();
             // Defensively consume event

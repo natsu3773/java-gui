@@ -1,40 +1,72 @@
 package sample;
 
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.ObservableArray;
 
 public class Client {
-    private final SimpleStringProperty ClientID = new SimpleStringProperty("");
-    private final SimpleStringProperty ClientFName = new SimpleStringProperty("");
-    private final SimpleStringProperty ClientLName = new SimpleStringProperty("");
+    private SimpleIntegerProperty CustID;
+    private SimpleStringProperty firstName;
+    private SimpleStringProperty lastName;
+    private SimpleStringProperty midName;
+    private SimpleStringProperty DOB;
+    private SimpleStringProperty Ethnicity;
+    private SimpleStringProperty Nationality;
 
 
-    public String getClientID() {
-        return ClientID.get();
+    public int getCustID() {
+        return this.CustID.get();
     }
 
-    public void setClientID(String clientID) {
-         ClientID.set(clientID);
+    public void setCustID(SimpleIntegerProperty custID) {
+        CustID = custID;
     }
 
-    public String getClientFName() {
-        return ClientFName.get();
+    public SimpleStringProperty getFirstName() {
+        return firstName;
     }
 
-    public void setClientFName(String clientFName) {
-        ClientFName.set(clientFName);
+    public void setFirstName(SimpleStringProperty firstName) {
+        this.firstName = firstName;
     }
 
-    public String getClientLName() {
-        return ClientLName.get();
+    public SimpleStringProperty getLastName() {
+        return lastName;
     }
 
-    public void setClientLName(String clientLName) {
-        ClientLName.set(clientLName);
+    public void setLastName(SimpleStringProperty lastName) {
+        this.lastName = lastName;
     }
 
-    public Client(String clientID, String clientFName, String clientLName) {
-        setClientID(clientID);
-        setClientFName(clientFName);
-        setClientLName(clientLName);
+    public SimpleStringProperty getMidName() {
+        return midName;
+    }
+
+    public void setMidName(SimpleStringProperty midName) {
+        this.midName = midName;
+    }
+
+    public SimpleStringProperty getDOB() {
+        return DOB;
+    }
+
+    public void setDOB(SimpleStringProperty DOB) {
+        this.DOB = DOB;
+    }
+
+    public SimpleStringProperty getEthnicity() {
+        return Ethnicity;
+    }
+
+    public void setEthnicity(SimpleStringProperty ethnicity) {
+        Ethnicity = ethnicity;
+    }
+
+    public SimpleStringProperty getNationality() {
+        return Nationality;
+    }
+
+    public void setNationality(SimpleStringProperty nationality) {
+        Nationality = nationality;
     }
 }

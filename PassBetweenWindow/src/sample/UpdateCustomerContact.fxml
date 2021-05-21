@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.UpdateCustomerContactController">
+   <children>
+      <HBox alignment="CENTER" fillHeight="false" prefHeight="52.0" prefWidth="600.0">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="27.0" prefWidth="194.0" text="EDIT CONTACT" textAlignment="CENTER" HBox.hgrow="NEVER">
+               <font>
+                  <Font name="Arial Bold" size="23.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets top="5.0" />
+         </padding>
+      </HBox>
+      <GridPane hgap="10.0" layoutX="164.0" layoutY="121.0" prefHeight="100.0" prefWidth="292.0" vgap="10.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="136.20001220703125" minWidth="10.0" prefWidth="96.20001220703125" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="185.79998779296872" minWidth="10.0" prefWidth="185.79998779296872" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label text="Tel No" GridPane.halignment="RIGHT">
+               <GridPane.margin>
+                  <Insets bottom="10.0" right="10.0" top="10.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Email Address" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="10.0" right="10.0" top="10.0" />
+               </GridPane.margin>
+            </Label>
+            <TextField fx:id="AddTelNo" promptText="Telephone No" GridPane.columnIndex="1" />
+            <TextField fx:id="AddEmail" promptText="example@gmail.com" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+      <Button fx:id="AddContactSubmit" layoutX="195.0" layoutY="252.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="74.0" text="SUBMIT" />
+      <Button fx:id="AddContactCancel" layoutX="300.0" layoutY="252.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="74.0" text="CANCEL" />
+   </children>
+</AnchorPane>
