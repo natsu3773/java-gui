@@ -149,9 +149,9 @@
                                  <children>
                                     <HBox spacing="10.0">
                                        <children>
-                                          <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="73.0" text="New" />
-                                          <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="73.0" text="Edit" />
-                                          <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="73.0" text="Delete" />
+                                          <Button fx:id="AddContactInfo" mnemonicParsing="false" onAction="#onAddContactInfo" prefHeight="26.0" prefWidth="73.0" text="New" />
+                                          <Button fx:id="EditContactInfo" mnemonicParsing="false" onAction="#onEditContactInfo" prefHeight="26.0" prefWidth="73.0" text="Edit" />
+                                          <Button fx:id="DeleteContactInfo" mnemonicParsing="false" onAction="#onDeleteContactInfo" prefHeight="26.0" prefWidth="73.0" text="Delete" />
                                        </children>
                                        <VBox.margin>
                                           <Insets bottom="2.0" top="2.0" />
