@@ -10,16 +10,16 @@ public class LoginController extends Controller implements Initializable {
     public void onLoginClick(ActionEvent actionEvent) {
         /*
             Put validation logic for user account here.
-            If valid credentials: move the try catch block inside the if block. Else consume the event.
+            If valid credentials: use the try catch block . Else consume the event.
             Assume valid credentials for navigation testing.
          */
         try {
-            // Gets the current window and controls and closes it.
+            // Closes the popup window
             Node source = (Node)  actionEvent.getSource();
             Stage stage  = (Stage) source.getScene().getWindow();
             stage.close();
 
-            //Update the state Variables for the system
+            //Update the state Variables for the system if the user logs in
             if (!loggedIn) {
                 LocalLabel.setText("Status: Logged In");
                 LocalMenuItem.setText("Logout");
@@ -27,6 +27,7 @@ public class LoginController extends Controller implements Initializable {
                 LocalMenuItem.setOnAction(event -> loggedIn=true);
 
             }
+            // Update the state Variables for the system after logging out
             if(loggedIn){
                 LocalMenuItem.setOnAction(e->{
                     loggedIn=false;

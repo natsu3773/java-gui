@@ -1,4 +1,40 @@
 package sample;
 
-public class UpdateCustomerLoanInfoController {
+import BLL.*;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class UpdateCustomerLoanInfoController implements Initializable {
+    @FXML private ComboBox EditLoanType;
+    @FXML private ComboBox EditLoanStatus;
+    @FXML private ComboBox EditLoanStartYear;
+    @FXML private ComboBox EditLoanStartMonth;
+    @FXML private ComboBox EditLoanStartDay;
+    @FXML private ComboBox EditLoanEndYear;
+    @FXML private ComboBox EditLoanEndMonth;
+    @FXML private ComboBox EditLoanEndDay;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        //local instances of the loan-type and date handler concrete classes for the abstract handler classes
+        LoanTypeHandler lth = new LoanTypeHandler();
+        MonthHandler mh = new MonthHandler();
+        DayHandler dh = new DayHandler();
+        LoanStartDurationHandler lsyh = new LoanStartDurationHandler();
+        LoanEndDurationHAndler ledh = new LoanEndDurationHAndler();
+        LoanStatusHandler slh = new LoanStatusHandler();
+        //Populating the combo boxes
+        EditLoanType.getItems().addAll(lth.populateLoanTypes());
+        EditLoanStartYear.getItems().addAll(lsyh.populateYearSelection());
+        EditLoanEndYear.getItems().addAll(ledh.populateYearSelection());
+        EditLoanStartMonth.getItems().addAll(mh.populateMonthSelection());
+        EditLoanEndMonth.getItems().addAll(mh.populateMonthSelection());
+        EditLoanStartDay.getItems().addAll(dh.populateDaySelection());
+        EditLoanEndDay.getItems().addAll(dh.populateDaySelection());
+        EditLoanStatus.getItems().addAll(slh.populateLoanStatus());
+    }
 }
