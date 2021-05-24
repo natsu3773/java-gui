@@ -1,4 +1,5 @@
 package sample;
+
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -8,28 +9,30 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.*;
+import java.util.ResourceBundle;
+
 public class Controller implements Initializable {
-    // variables to use in initialization section
+    // variables to use to handle state and initialization of the window
     public Label lblTime;
     public Timeline timeline;
+
     @FXML private Label lblSystemState;
-   @FXML private Label LoggedStatus;
+    @FXML private MenuItem LoginMenuItem;
+    public static MenuItem LocalMenuItem;
+    public static Label LocalLabel;
+    public static boolean loggedIn = false;
 
-    public void setLoginStatus(){
 
-        LoggedStatus.setText("true");
-        lblSystemState.setText("Status: Signed In");
-        System.out.println("Logged in: " + LoggedStatus.getText());
-    }
 
     public void Search(ActionEvent actionEvent) {
         /*
@@ -61,7 +64,8 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+            LocalLabel = lblSystemState;
+            LocalMenuItem = LoginMenuItem;
         //once fxml has been parsed this will run on a thread that can access the JavaFX thread.
         /*
          the next 3 lines create what is essentially an animation that updates every second and gets shown on screen
@@ -74,6 +78,7 @@ public class Controller implements Initializable {
         }));
         timeline.setCycleCount(Animation.INDEFINITE);
         timeline.play();
+
     }
 
 
@@ -130,6 +135,7 @@ public class Controller implements Initializable {
 
         Stage stage = new Stage();
         //Blocks other interactions before it is dealt with.
+        stage.initModality(Modality.APPLICATION_MODAL);
         stage.setScene(scene);
         stage.show();
         //Defensively consume the event after handling
