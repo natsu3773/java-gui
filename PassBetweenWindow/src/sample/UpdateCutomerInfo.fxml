@@ -69,7 +69,7 @@
             <Insets />
          </opaqueInsets>
       </Label>
-      <Button layoutX="225.0" layoutY="442.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" text="CANCEL" />
-      <Button layoutX="97.0" layoutY="442.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" text="SUBMIT" />
+      <Button fx:id="CustomerEditCancel" layoutX="292.0" layoutY="456.0" mnemonicParsing="false" onAction="#onCancelEditCustomer" prefHeight="26.0" prefWidth="75.0" text="CANCEL" />
+      <Button fx:id="EditCustomerSubmit" layoutX="164.0" layoutY="456.0" mnemonicParsing="false" onAction="#onSubmitCutomerEdit" prefHeight="26.0" prefWidth="75.0" text="SUBMIT" />
    </children>
 </AnchorPane>

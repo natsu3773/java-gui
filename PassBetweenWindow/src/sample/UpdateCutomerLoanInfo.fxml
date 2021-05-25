@@ -12,7 +12,6 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.UpdateCustomerLoanInfoController">
    <children>
       <HBox alignment="CENTER" prefHeight="52.0" prefWidth="600.0">
@@ -73,7 +72,7 @@
             </HBox>
          </children>
       </GridPane>
-      <Button fx:id="EditLoanSubmit" layoutX="186.0" layoutY="335.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="63.0" text="SUBMIT" />
-      <Button fx:id="EditLoanCancel" layoutX="300.0" layoutY="335.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="63.0" text="CANCEL" />
+      <Button fx:id="EditLoanSubmit" layoutX="186.0" layoutY="335.0" mnemonicParsing="false" onAction="#onSubmitEditLoan" prefHeight="26.0" prefWidth="63.0" text="SUBMIT" />
+      <Button fx:id="EditLoanCancel" layoutX="300.0" layoutY="335.0" mnemonicParsing="false" onAction="#onCancelEditLoan" prefHeight="26.0" prefWidth="63.0" text="CANCEL" />
    </children>
 </AnchorPane>
