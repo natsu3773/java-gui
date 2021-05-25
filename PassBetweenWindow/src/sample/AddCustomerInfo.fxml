@@ -57,8 +57,8 @@
             <ComboBox fx:id="AddCustEthnicity" prefHeight="26.0" prefWidth="100.0" promptText="Ethnicity" GridPane.columnIndex="1" GridPane.rowIndex="4" />
          </children>
       </GridPane>
-      <Button layoutX="123.0" layoutY="428.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" text="SUBMIT" />
-      <Button layoutX="233.0" layoutY="428.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" text="CANCEL" />
+      <Button fx:id="AddCustomerInfo" layoutX="123.0" layoutY="428.0" mnemonicParsing="false" onAction="#onSubmitAddCustomer" prefHeight="26.0" prefWidth="75.0" text="SUBMIT" />
+      <Button fx:id="AddCutomerCancel" layoutX="233.0" layoutY="428.0" mnemonicParsing="false" onAction="#onCancelAddCustomer" prefHeight="26.0" prefWidth="75.0" text="CANCEL" />
       <HBox prefHeight="47.0" prefWidth="568.0" AnchorPane.bottomAnchor="538.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="568.0" text="NEW CUSTOMER " textAlignment="CENTER">

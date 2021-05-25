@@ -1,8 +1,12 @@
 package sample;
 import BLL.*;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.ComboBox;
+import javafx.stage.Stage;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -31,4 +35,15 @@ public class AddCustomerInfoController implements Initializable {
         AddCustEthnicity.getItems().addAll(eh.populateEthnicities());
     }
 
+    public void onSubmitAddCustomer(ActionEvent event) {
+    }
+
+    public void onCancelAddCustomer(ActionEvent event) {
+        // Closes the popup
+        Node source = (Node)  event.getSource();
+        Stage stage  = (Stage) source.getScene().getWindow();
+        stage.close();
+        //Defensively consume the event
+        event.consume();
+    }
 }
