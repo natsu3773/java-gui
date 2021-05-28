@@ -36,29 +36,29 @@
             <TextField prefHeight="32.0" prefWidth="220.0" promptText="Last Name" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <children>
-                  <ComboBox prefHeight="26.0" prefWidth="75.0" promptText="YYYY" HBox.hgrow="NEVER">
+                  <ComboBox fx:id="AddCustYear" prefHeight="26.0" prefWidth="75.0" promptText="YYYY" HBox.hgrow="NEVER">
                      <HBox.margin>
                         <Insets top="2.0" />
                      </HBox.margin>
                   </ComboBox>
-                  <ComboBox prefHeight="26.0" prefWidth="75.0" promptText="MM">
+                  <ComboBox fx:id="AddCustMonth" prefHeight="26.0" prefWidth="75.0" promptText="MM">
                      <HBox.margin>
                         <Insets top="2.0" />
                      </HBox.margin>
                   </ComboBox>
-                  <ComboBox prefHeight="26.0" prefWidth="75.0" promptText="DD">
+                  <ComboBox fx:id="AddCustDay" prefHeight="26.0" prefWidth="75.0" promptText="DD">
                      <HBox.margin>
                         <Insets top="2.0" />
                      </HBox.margin>
                   </ComboBox>
                </children>
             </HBox>
-            <ComboBox prefHeight="26.0" prefWidth="100.0" promptText="Gender" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <ComboBox prefHeight="26.0" prefWidth="100.0" promptText="Ethnicity" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <ComboBox fx:id="AddCustGender" prefHeight="26.0" prefWidth="100.0" promptText="Gender" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <ComboBox fx:id="AddCustEthnicity" prefHeight="26.0" prefWidth="100.0" promptText="Ethnicity" GridPane.columnIndex="1" GridPane.rowIndex="4" />
          </children>
       </GridPane>
-      <Button layoutX="123.0" layoutY="428.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" text="SUBMIT" />
-      <Button layoutX="233.0" layoutY="428.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" text="CANCEL" />
+      <Button fx:id="AddCustomerInfo" layoutX="123.0" layoutY="428.0" mnemonicParsing="false" onAction="#onSubmitAddCustomer" prefHeight="26.0" prefWidth="75.0" text="SUBMIT" />
+      <Button fx:id="AddCutomerCancel" layoutX="233.0" layoutY="428.0" mnemonicParsing="false" onAction="#onCancelAddCustomer" prefHeight="26.0" prefWidth="75.0" text="CANCEL" />
       <HBox prefHeight="47.0" prefWidth="568.0" AnchorPane.bottomAnchor="538.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="568.0" text="NEW CUSTOMER " textAlignment="CENTER">
