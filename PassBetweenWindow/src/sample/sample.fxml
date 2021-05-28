@@ -113,9 +113,9 @@
                                  <children>
                                     <HBox spacing="10.0">
                                        <children>
-                                          <Button fx:id="AddCustomer" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onAddCustomer" prefHeight="26.0" prefWidth="73.0" text="New" />
-                                          <Button fx:id="EditCustomer" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onEditCustomer" prefHeight="26.0" prefWidth="73.0" snapToPixel="false" text="Edit" textAlignment="CENTER" />
-                                          <Button fx:id="DeleteCustomer" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onDeleteCustomer" prefHeight="26.0" prefWidth="73.0" text="Delete" textAlignment="CENTER" />
+                                          <Button fx:id="AddCustomer" contentDisplay="CENTER" disable="true" mnemonicParsing="false" onAction="#onAddCustomer" prefHeight="26.0" prefWidth="73.0" text="New" />
+                                          <Button fx:id="EditCustomer" contentDisplay="CENTER" disable="true" mnemonicParsing="false" onAction="#onEditCustomer" prefHeight="26.0" prefWidth="73.0" snapToPixel="false" text="Edit" textAlignment="CENTER" />
+                                          <Button fx:id="DeleteCustomer" contentDisplay="CENTER" disable="true" mnemonicParsing="false" onAction="#onDeleteCustomer" prefHeight="26.0" prefWidth="73.0" text="Delete" textAlignment="CENTER" />
                                        </children>
                                        <VBox.margin>
                                           <Insets bottom="2.0" top="2.0" />
@@ -148,9 +148,9 @@
                                  <children>
                                     <HBox spacing="10.0">
                                        <children>
-                                          <Button fx:id="AddContactInfo" mnemonicParsing="false" onAction="#onAddContactInfo" prefHeight="26.0" prefWidth="73.0" text="New" />
-                                          <Button fx:id="EditContactInfo" mnemonicParsing="false" onAction="#onEditContactInfo" prefHeight="26.0" prefWidth="73.0" text="Edit" />
-                                          <Button fx:id="DeleteContactInfo" mnemonicParsing="false" onAction="#onDeleteContactInfo" prefHeight="26.0" prefWidth="73.0" text="Delete" />
+                                          <Button fx:id="AddContactInfo" disable="true" mnemonicParsing="false" onAction="#onAddContactInfo" prefHeight="26.0" prefWidth="73.0" text="New" />
+                                          <Button fx:id="EditContactInfo" disable="true" mnemonicParsing="false" onAction="#onEditContactInfo" prefHeight="26.0" prefWidth="73.0" text="Edit" />
+                                          <Button fx:id="DeleteContactInfo" disable="true" mnemonicParsing="false" onAction="#onDeleteContactInfo" prefHeight="26.0" prefWidth="73.0" text="Delete" />
                                        </children>
                                        <VBox.margin>
                                           <Insets bottom="2.0" top="2.0" />
@@ -187,9 +187,9 @@
                                  <children>
                                     <HBox fillHeight="false" spacing="10.0">
                                        <children>
-                                          <Button fx:id="AddAddress" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onAddAddress" prefHeight="26.0" prefWidth="73.0" text="New" />
-                                          <Button fx:id="EditAddress" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onEditAddress" prefHeight="26.0" prefWidth="73.0" snapToPixel="false" text="Edit" textAlignment="CENTER" />
-                                          <Button fx:id="DeleteAddress" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onDeleteAddress" prefHeight="26.0" prefWidth="73.0" text="Delete" textAlignment="CENTER" />
+                                          <Button fx:id="AddAddress" contentDisplay="CENTER" disable="true" mnemonicParsing="false" onAction="#onAddAddress" prefHeight="26.0" prefWidth="73.0" text="New" />
+                                          <Button fx:id="EditAddress" contentDisplay="CENTER" disable="true" mnemonicParsing="false" onAction="#onEditAddress" prefHeight="26.0" prefWidth="73.0" snapToPixel="false" text="Edit" textAlignment="CENTER" />
+                                          <Button fx:id="DeleteAddress" contentDisplay="CENTER" disable="true" mnemonicParsing="false" onAction="#onDeleteAddress" prefHeight="26.0" prefWidth="73.0" text="Delete" textAlignment="CENTER" />
                                        </children>
                                        <VBox.margin>
                                           <Insets />
@@ -229,9 +229,9 @@
                                  <children>
                                     <HBox spacing="10.0">
                                        <children>
-                                          <Button fx:id="AddFinancialRecord" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onAddFinancialRecord" prefHeight="26.0" prefWidth="73.0" text="New" />
-                                          <Button fx:id="EditFinancialRecord" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onEditFinancialRecord" prefHeight="26.0" prefWidth="73.0" snapToPixel="false" text="Edit" textAlignment="CENTER" />
-                                          <Button fx:id="DeleteFinancialRecord" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onDeleteFinancialRecord" prefHeight="26.0" prefWidth="73.0" text="Delete" textAlignment="CENTER" />
+                                          <Button fx:id="AddFinancialRecord" contentDisplay="CENTER" disable="true" mnemonicParsing="false" onAction="#onAddFinancialRecord" prefHeight="26.0" prefWidth="73.0" text="New" />
+                                          <Button fx:id="EditFinancialRecord" contentDisplay="CENTER" disable="true" mnemonicParsing="false" onAction="#onEditFinancialRecord" prefHeight="26.0" prefWidth="73.0" snapToPixel="false" text="Edit" textAlignment="CENTER" />
+                                          <Button fx:id="DeleteFinancialRecord" contentDisplay="CENTER" disable="true" mnemonicParsing="false" onAction="#onDeleteFinancialRecord" prefHeight="26.0" prefWidth="73.0" text="Delete" textAlignment="CENTER" />
                                        </children>
                                        <VBox.margin>
                                           <Insets />
@@ -271,9 +271,9 @@
                                  <children>
                                     <HBox spacing="10.0">
                                        <children>
-                                          <Button fx:id="AddLoan" mnemonicParsing="false" onAction="#onAddLoan" prefHeight="26.0" prefWidth="73.0" text="New" />
-                                          <Button fx:id="EditLoan" mnemonicParsing="false" onAction="#onEditLoan" prefHeight="26.0" prefWidth="73.0" text="Edit" textAlignment="CENTER" />
-                                          <Button fx:id="DeleteLoan" mnemonicParsing="false" onAction="#onDeleteLoan" prefHeight="26.0" prefWidth="73.0" text="Delete" textAlignment="CENTER" />
+                                          <Button fx:id="AddLoan" disable="true" mnemonicParsing="false" onAction="#onAddLoan" prefHeight="26.0" prefWidth="73.0" text="New" />
+                                          <Button fx:id="EditLoan" disable="true" mnemonicParsing="false" onAction="#onEditLoan" prefHeight="26.0" prefWidth="73.0" text="Edit" textAlignment="CENTER" />
+                                          <Button fx:id="DeleteLoan" disable="true" mnemonicParsing="false" onAction="#onDeleteLoan" prefHeight="26.0" prefWidth="73.0" text="Delete" textAlignment="CENTER" />
                                        </children>
                                        <VBox.margin>
                                           <Insets />

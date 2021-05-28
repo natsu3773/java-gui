@@ -1,13 +1,29 @@
 package sample;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class LoginController extends Controller implements Initializable {
+    Validation validation;
+    @FXML private TextField username;
+    @FXML private PasswordField pass;
+    @FXML private CheckBox CheckRegistration;
+    public static CheckBox CBX;
     public void onLoginClick(ActionEvent actionEvent) {
+        String un = username.getText();
+        String pw = pass.getText();
         /*
             Put validation logic for user account here.
             If valid credentials: use the try catch block . Else consume the event.
@@ -21,10 +37,29 @@ public class LoginController extends Controller implements Initializable {
 
             //Update the state Variables for the system if the user logs in
             if (!loggedIn) {
+
+                if(un.equalsIgnoreCase("Admin") && pw.equalsIgnoreCase("Admin")){
+                    AddCust.setDisable(false);
+                    EditCust.setDisable(false);
+                    DelCust.setDisable(false);
+                    AddAddr.setDisable(false);
+                    EditAddr.setDisable(false);
+                    DelAddr.setDisable(false);
+                    AddCont.setDisable(false);
+                    EditContact.setDisable(false);
+                    DelContact.setDisable(false);
+                    AddFin.setDisable(false);
+                    EditFin.setDisable(false);
+                    DelFin.setDisable(false);
+                    SAddLoan.setDisable(false);
+                    SEditLoan.setDisable(false);
+                    DelLoan.setDisable(false);
+                }
                 LocalLabel.setText("Status: Logged In");
                 LocalMenuItem.setText("Logout");
                 loggedIn=true;
                 LocalMenuItem.setOnAction(event -> loggedIn=true);
+                // If a user is an admin they can perform all tasks therefore enabling all buttons
 
             }
             // Update the state Variables for the system after logging out
@@ -35,7 +70,22 @@ public class LoginController extends Controller implements Initializable {
                     LocalMenuItem.setText("Login");
                     // This resets the event handler such that a client can login again without restarting the application.
                     LocalMenuItem.setOnAction(this::onLogin);
-
+                    //Ensures that the access to certain actions is always restricted after logging out
+                    AddCust.setDisable(true);
+                    EditCust.setDisable(true);
+                    DelCust.setDisable(true);
+                    AddAddr.setDisable(true);
+                    EditAddr.setDisable(true);
+                    DelAddr.setDisable(true);
+                    AddCont.setDisable(true);
+                    EditContact.setDisable(true);
+                    DelContact.setDisable(true);
+                    AddFin.setDisable(true);
+                    EditFin.setDisable(true);
+                    DelFin.setDisable(true);
+                    SAddLoan.setDisable(true);
+                    SEditLoan.setDisable(true);
+                    DelLoan.setDisable(true);
                 });
             }
 
@@ -57,6 +107,23 @@ public class LoginController extends Controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+            CBX = CheckRegistration;
 
+    }
+
+    public void onCheckRegistration(ActionEvent event) {
+
+        Node source = (Node) event.getSource();
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Registration.fxml"));
+        try {
+            Parent parent = loader.load();
+            Stage stage = new Stage();
+            Scene scene = new Scene(parent);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

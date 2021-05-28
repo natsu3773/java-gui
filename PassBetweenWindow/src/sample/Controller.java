@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.stage.Modality;
@@ -28,10 +29,40 @@ public class Controller implements Initializable {
 
     @FXML private Label lblSystemState;
     @FXML private MenuItem LoginMenuItem;
+    @FXML private Button AddCustomer;
+    @FXML private Button EditCustomer;
+    @FXML private Button DeleteCustomer;
+    @FXML private Button AddContactInfo;
+    @FXML private Button EditContactInfo;
+    @FXML private Button DeleteContactInfo;
+    @FXML private Button AddAddress;
+    @FXML private Button EditAddress;
+    @FXML private Button DeleteAddress;
+    @FXML private Button AddFinancialRecord;
+    @FXML private Button EditFinancialRecord;
+    @FXML private Button DeleteFinancialRecord;
+    @FXML private Button AddLoan;
+    @FXML private Button EditLoan;
+    @FXML private Button DeleteLoan;
+
     public static MenuItem LocalMenuItem;
     public static Label LocalLabel;
     public static boolean loggedIn = false;
-
+    public static Button AddCust;
+    public static Button EditCust;
+    public static Button DelCust;
+    public static Button AddCont;
+    public static Button EditContact;
+    public static Button DelContact;
+    public static Button AddAddr;
+    public static Button EditAddr;
+    public static Button DelAddr;
+    public static Button AddFin;
+    public static Button EditFin;
+    public static Button DelFin;
+    public static Button SAddLoan;
+    public static Button SEditLoan;
+    public static Button DelLoan;
 
 
     public void Search(ActionEvent actionEvent) {
@@ -66,6 +97,21 @@ public class Controller implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
             LocalLabel = lblSystemState;
             LocalMenuItem = LoginMenuItem;
+            AddCust = AddCustomer;
+            EditCust = EditCustomer;
+            DelCust = DeleteCustomer;
+            AddCont = AddContactInfo;
+            EditContact = EditContactInfo;
+            DelContact = DeleteContactInfo;
+            AddAddr = AddAddress;
+            EditAddr = EditAddress;
+            DelAddr = DeleteAddress;
+            AddFin = AddFinancialRecord;
+            EditFin = EditFinancialRecord;
+            DelFin = DeleteFinancialRecord;
+            SAddLoan = AddLoan;
+            SEditLoan = EditLoan;
+            DelLoan = DeleteLoan;
         //once fxml has been parsed this will run on a thread that can access the JavaFX thread.
         /*
          the next 3 lines create what is essentially an animation that updates every second and gets shown on screen
