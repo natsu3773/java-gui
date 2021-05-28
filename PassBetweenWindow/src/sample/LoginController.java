@@ -21,6 +21,8 @@ public class LoginController extends Controller implements Initializable {
     @FXML private PasswordField pass;
     @FXML private CheckBox CheckRegistration;
     public static CheckBox CBX;
+    public static boolean FirstTime=false;
+
     public void onLoginClick(ActionEvent actionEvent) {
         String un = username.getText();
         String pw = pass.getText();
@@ -30,14 +32,10 @@ public class LoginController extends Controller implements Initializable {
             Assume valid credentials for navigation testing.
          */
         try {
-            // Closes the popup window
-            Node source = (Node)  actionEvent.getSource();
-            Stage stage  = (Stage) source.getScene().getWindow();
-            stage.close();
-
             //Update the state Variables for the system if the user logs in
+            // Validation will trigger events if the user attempts to log in with blank fields
             if (!loggedIn) {
-
+                // If a user is an admin they can perform all tasks therefore enabling all buttons
                 if(un.equalsIgnoreCase("Admin") && pw.equalsIgnoreCase("Admin")){
                     AddCust.setDisable(false);
                     EditCust.setDisable(false);
@@ -55,11 +53,23 @@ public class LoginController extends Controller implements Initializable {
                     SEditLoan.setDisable(false);
                     DelLoan.setDisable(false);
                 }
+                // enable buttons for first time on system to complete registration
+                // *NB Still need to add credential check later
+                if(FirstTime){
+                    AddCust.setDisable(false);
+                    AddCont.setDisable(false);
+                    AddAddr.setDisable(false);
+                    AddFin.setDisable(false);
+                    SAddLoan.setDisable(false);
+                }
+
+
+                //Updates labels and menu items once logged in successfully
                 LocalLabel.setText("Status: Logged In");
                 LocalMenuItem.setText("Logout");
                 loggedIn=true;
                 LocalMenuItem.setOnAction(event -> loggedIn=true);
-                // If a user is an admin they can perform all tasks therefore enabling all buttons
+
 
             }
             // Update the state Variables for the system after logging out
@@ -70,7 +80,7 @@ public class LoginController extends Controller implements Initializable {
                     LocalMenuItem.setText("Login");
                     // This resets the event handler such that a client can login again without restarting the application.
                     LocalMenuItem.setOnAction(this::onLogin);
-                    //Ensures that the access to certain actions is always restricted after logging out
+                    //Ensures that the access to all actions are restricted after logging out.
                     AddCust.setDisable(true);
                     EditCust.setDisable(true);
                     DelCust.setDisable(true);
@@ -88,7 +98,10 @@ public class LoginController extends Controller implements Initializable {
                     DelLoan.setDisable(true);
                 });
             }
-
+            // Closes the popup window
+            Node source = (Node)  actionEvent.getSource();
+            Stage stage  = (Stage) source.getScene().getWindow();
+            stage.close();
             // Defensively consume event
             actionEvent.consume();
         } catch (Exception e) {
@@ -108,13 +121,9 @@ public class LoginController extends Controller implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
             CBX = CheckRegistration;
-
     }
 
     public void onCheckRegistration(ActionEvent event) {
-
-        Node source = (Node) event.getSource();
-
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Registration.fxml"));
         try {
             Parent parent = loader.load();
