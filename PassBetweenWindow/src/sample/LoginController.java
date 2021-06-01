@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -124,13 +125,17 @@ public class LoginController extends Controller implements Initializable {
     }
 
     public void onCheckRegistration(ActionEvent event) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Registration.fxml"));
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("FirstUserCheck.fxml"));
         try {
             Parent parent = loader.load();
             Stage stage = new Stage();
             Scene scene = new Scene(parent);
             stage.setScene(scene);
+            stage.initModality(Modality.APPLICATION_MODAL);
             stage.show();
+            //Defensively consume event
+            event.consume();
         } catch (IOException e) {
             e.printStackTrace();
         }

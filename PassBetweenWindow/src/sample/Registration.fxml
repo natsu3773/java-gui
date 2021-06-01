@@ -25,17 +25,17 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Label text="Password" GridPane.rowIndex="1" />
-            <PasswordField fx:id="RegisterUserPassword" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Label text="Confirm Password" GridPane.rowIndex="2" />
-            <PasswordField fx:id="RegisterConfirmPassword" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <Label text="Username" />
-            <TextField fx:id="RegistrationUsername" GridPane.columnIndex="1" />
+            <TextField fx:id="RegistrationUsername" promptText="Username" GridPane.columnIndex="1" />
+            <Label text="Password" GridPane.rowIndex="1" />
+            <PasswordField fx:id="RegisterUserPassword" promptText="Password" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Confirm Password" GridPane.rowIndex="2" />
+            <PasswordField fx:id="RegisterConfirmPassword" promptText="Confirm Password" GridPane.columnIndex="1" GridPane.rowIndex="2" />
          </children>
       </GridPane>
       <Button fx:id="AddRegistration" layoutX="172.0" layoutY="283.0" mnemonicParsing="false" onAction="#onSubmitAddRegistration" prefHeight="26.0" prefWidth="75.0" text="SUBMIT" />
       <Button fx:id="AddRegistrationCancel" layoutX="300.0" layoutY="283.0" mnemonicParsing="false" onAction="#onCancelAddRegistration" prefHeight="26.0" prefWidth="75.0" text="CANCEL" />
-      <HBox prefHeight="47.0" prefWidth="568.0" AnchorPane.bottomAnchor="538.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <HBox prefHeight="51.0" prefWidth="588.0" AnchorPane.bottomAnchor="538.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="568.0" text="WELCOME TO THE SYSTEM" textAlignment="CENTER">
                <font>
