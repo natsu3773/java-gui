@@ -16,7 +16,7 @@ public class AddCustomerInfoController implements Initializable {
     @FXML private ComboBox AddCustDay;
     @FXML private ComboBox AddCustGender;
     @FXML private ComboBox AddCustEthnicity;
-
+    public static boolean FirstTime = false;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //local instances of the concrete gender ethnicity date handler abstract classes.

@@ -27,7 +27,7 @@ public class EmployeeRegistrationController extends LoginController implements I
         String access = cbxRoles.getSelectionModel().getSelectedItem().toString();
         GenEmployeeUsername gen = new GenEmployeeUsername();
         String username = gen.GenerateID(access,name,surname);
-        System.out.println(username);
+        txtEmployeeUsername.setText(username);
         event.consume();
     }
 

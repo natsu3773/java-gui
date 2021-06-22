@@ -70,7 +70,7 @@ public class LoginController extends Controller implements Initializable {
                 LocalMenuItem.setText("Logout");
                 loggedIn=true;
                 LocalMenuItem.setOnAction(event -> loggedIn=true);
-
+                ProfileEdit.setOnAction(event -> loggedIn=true);
 
             }
             // Update the state Variables for the system after logging out
@@ -81,6 +81,7 @@ public class LoginController extends Controller implements Initializable {
                     LocalMenuItem.setText("Login");
                     // This resets the event handler such that a client can login again without restarting the application.
                     LocalMenuItem.setOnAction(this::onLogin);
+                    ProfileEdit.setOnAction(this::onLogin);
                     //Ensures that the access to all actions are restricted after logging out.
                     AddCust.setDisable(true);
                     EditCust.setDisable(true);
@@ -97,6 +98,22 @@ public class LoginController extends Controller implements Initializable {
                     SAddLoan.setDisable(true);
                     SEditLoan.setDisable(true);
                     DelLoan.setDisable(true);
+                });
+
+                ProfileEdit.setOnAction(e->{
+                    FXMLLoader fxmlLoader  = new FXMLLoader(getClass().getResource("Profile.fxml"));
+                    try {
+                        Parent parent = fxmlLoader.load();
+                        Scene scene = new Scene(parent);
+                        Stage stage = new Stage();
+                        //Blocks other interactions before it is dealt with.
+                        stage.initModality(Modality.APPLICATION_MODAL);
+                        stage.setScene(scene);
+                        stage.show();
+
+                    } catch (IOException ev) {
+                        ev.printStackTrace();
+                    }
                 });
             }
             // Closes the popup window

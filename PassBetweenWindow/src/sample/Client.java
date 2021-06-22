@@ -13,7 +13,6 @@ public class Client {
     private SimpleStringProperty Ethnicity;
     private SimpleStringProperty Nationality;
 
-
     public int getCustID() {
         return this.CustID.get();
     }
