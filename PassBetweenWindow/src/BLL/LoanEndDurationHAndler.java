@@ -5,7 +5,8 @@ import javafx.collections.ObservableList;
 
 import java.time.LocalDate;
 
-public class LoanEndDurationHAndler {
+public class LoanEndDurationHAndler extends AbstractYearHandler{
+    @Override
     public ObservableList populateYearSelection() {
         ObservableList years = FXCollections.observableArrayList();
         int YYYY=LocalDate.now().getYear();
