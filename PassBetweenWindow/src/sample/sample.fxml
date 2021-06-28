@@ -97,7 +97,6 @@
                            <children>
                               <TableView fx:id="tblCustomerView" editable="true" VBox.vgrow="ALWAYS">
                                 <columns>
-                                  <TableColumn fx:id="MainCustID" prefWidth="95.2000305056572" text="Customer ID" />
                                   <TableColumn fx:id="MainCustFName" prefWidth="104.0" text="First Name" />
                                     <TableColumn fx:id="MainCustMName" prefWidth="102.40000915527344" text="Middle Name" />
                                     <TableColumn fx:id="MainCustLName" prefWidth="100.79998779296875" text="Last Name" />
@@ -132,7 +131,7 @@
                   </AnchorPane>
             </content>
           </Tab>
-            <Tab text="Contact Info">
+            <Tab fx:id="TabContactInfo" text="Contact Info">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
@@ -164,7 +163,7 @@
                   </AnchorPane>
               </content>
             </Tab>
-            <Tab fx:id="AddressInfo" text="Address Info">
+            <Tab fx:id="TabAddressInfo" text="Address Info">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
@@ -172,12 +171,11 @@
                            <children>
                               <TableView fx:id="tblAddressView" prefHeight="312.0" prefWidth="799.0" VBox.vgrow="ALWAYS">
                                  <columns>
-                                    <TableColumn fx:id="MainCustAddressID" prefWidth="113.0" text="Address ID" />
                                     <TableColumn fx:id="MainCustHouseNumber" prefWidth="124.0" text="House Number" />
                                     <TableColumn fx:id="MainCustStreet" prefWidth="102.0" text="Street " />
                                     <TableColumn fx:id="MainCustSuburb" prefWidth="102.0" text="Suburb" />
                                     <TableColumn fx:id="MainCustProvince" prefWidth="101.0" text="Province" />
-                                    <TableColumn fx:id="MainCustPostal" prefWidth="75.0" text="PostalCode" />
+                                    <TableColumn fx:id="MainCustPostal" prefWidth="75.0" text="Postal Code" />
                                  </columns>
                                  <VBox.margin>
                                     <Insets />
@@ -206,7 +204,7 @@
                   </AnchorPane>
               </content>
             </Tab>
-            <Tab fx:id="FinancialInfo" text="Financial Info">
+            <Tab fx:id="TabFinancialInfo" text="Financial Info">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
@@ -214,8 +212,7 @@
                            <children>
                               <TableView fx:id="tblFinancialInfoView" prefHeight="312.0" prefWidth="799.0" VBox.vgrow="ALWAYS">
                                  <columns>
-                                    <TableColumn fx:id="MainCustFinID" prefWidth="113.0" text="FInancial ID" />
-                                    <TableColumn fx:id="MainCustFinGross" prefWidth="102.0" text="Gross Incme" />
+                                    <TableColumn fx:id="MainCustFinGross" prefWidth="102.0" text="Gross Income" />
                                     <TableColumn fx:id="MainCustFinNet" prefWidth="124.0" text="Net Income" />
                                     <TableColumn fx:id="MainCustFinExp" prefWidth="102.0" text="Expenses" />
                                     <TableColumn fx:id="MainCustFinCreditScore" prefWidth="101.0" text="Credit Score" />
@@ -248,7 +245,7 @@
                   </AnchorPane>
               </content>
             </Tab>
-            <Tab fx:id="MainCustLoan" text="Loan Info">
+            <Tab fx:id="TabLoan" text="Loan Info">
                <content>
                   <AnchorPane>
                      <children>
@@ -256,14 +253,12 @@
                            <children>
                               <TableView fx:id="tblLoanView" editable="true" prefHeight="312.0" prefWidth="799.0" VBox.vgrow="ALWAYS">
                                  <columns>
-                                    <TableColumn fx:id="MainCustLoanID" prefWidth="75.19995421171188" text="LoanID" />
                                     <TableColumn fx:id="MainCustLoanType" prefWidth="101.59991455078125" text="LoanType" />
                                     <TableColumn fx:id="MainCustLoanStatus" prefWidth="101.60002136230469" text="Loan Status" />
                                     <TableColumn fx:id="MainCustLoanAmt" prefWidth="108.79998779296875" text="Loan Amount" />
                                     <TableColumn fx:id="MainCustLoanStart" prefWidth="88.79998779296875" text="Loan Start" />
                                     <TableColumn fx:id="MainCustLoanEnd" prefWidth="89.60003662109375" text="Loan End" />
                                     <TableColumn fx:id="MainCustLoanMonth" prefWidth="108.00006103515625" text="Monthly Charge" />
-                                    <TableColumn fx:id="CustIDLoan" prefWidth="92.0" text="CustomerID" />
                                     <TableColumn fx:id="LoanSurityID" prefWidth="119.199951171875" text="Surity ID" />
                                  </columns>
                               </TableView>

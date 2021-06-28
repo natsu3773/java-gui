@@ -1,5 +1,6 @@
 package sample;
 
+import DAL.CRUDHandler;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -28,6 +29,7 @@ public class Controller implements Initializable {
     public Timeline timeline;
 
     @FXML private Label lblSystemState;
+    @FXML private MenuItem EditProfile;
     @FXML private MenuItem LoginMenuItem;
     @FXML private Button AddCustomer;
     @FXML private Button EditCustomer;
@@ -44,7 +46,7 @@ public class Controller implements Initializable {
     @FXML private Button AddLoan;
     @FXML private Button EditLoan;
     @FXML private Button DeleteLoan;
-
+    public static MenuItem ProfileEdit;
     public static MenuItem LocalMenuItem;
     public static Label LocalLabel;
     public static boolean loggedIn = false;
@@ -97,6 +99,7 @@ public class Controller implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
             LocalLabel = lblSystemState;
             LocalMenuItem = LoginMenuItem;
+            ProfileEdit = EditProfile;
             AddCust = AddCustomer;
             EditCust = EditCustomer;
             DelCust = DeleteCustomer;
@@ -112,6 +115,18 @@ public class Controller implements Initializable {
             SAddLoan = AddLoan;
             SEditLoan = EditLoan;
             DelLoan = DeleteLoan;
+            EditCust.setVisible(false);
+            DelCust.setVisible(false);
+            EditContact.setVisible(false);
+            DelContact.setVisible(false);
+            EditAddr.setVisible(false);
+            DelAddr.setVisible(false);
+            EditFin.setVisible(false);
+            DelFin.setVisible(false);
+            SEditLoan.setVisible(false);
+            DelLoan.setVisible(false);
+            CRUDHandler crudHandler = new CRUDHandler();
+            crudHandler.getALl();
         //once fxml has been parsed this will run on a thread that can access the JavaFX thread.
         /*
          the next 3 lines create what is essentially an animation that updates every second and gets shown on screen
@@ -130,14 +145,13 @@ public class Controller implements Initializable {
 
     public void onEditProfile(ActionEvent actionEvent) {
         //Gets the contents from the fxml and displays it onto a new window focus on the new popup window.
-         FXMLLoader fxmlLoader  = new FXMLLoader(getClass().getResource("Profile.fxml"));
+         FXMLLoader fxmlLoader  = new FXMLLoader(getClass().getResource("Login.fxml"));
             try {
              Parent parent = fxmlLoader.load();
                 Scene scene = new Scene(parent);
                 Stage stage = new Stage();
                 //Blocks other interactions before it is dealt with.
                 stage.initModality(Modality.APPLICATION_MODAL);
-                stage.setTitle("Edit Profie");
                 stage.setScene(scene);
                 stage.show();
 

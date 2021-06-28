@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -52,6 +53,16 @@ public class LoginController extends Controller implements Initializable {
                     SAddLoan.setDisable(false);
                     SEditLoan.setDisable(false);
                     DelLoan.setDisable(false);
+                    EditCust.setVisible(true);
+                    DelCust.setVisible(true);
+                    EditContact.setVisible(true);
+                    DelContact.setVisible(true);
+                    EditAddr.setVisible(true);
+                    DelAddr.setVisible(true);
+                    EditFin.setVisible(true);
+                    DelFin.setVisible(true);
+                    SEditLoan.setVisible(true);
+                    DelLoan.setVisible(true);
                 }
                 // enable buttons for first time on system to complete registration
                 // *NB Still need to add credential check later
@@ -69,6 +80,7 @@ public class LoginController extends Controller implements Initializable {
                 LocalMenuItem.setText("Logout");
                 loggedIn=true;
                 LocalMenuItem.setOnAction(event -> loggedIn=true);
+                ProfileEdit.setOnAction(event -> loggedIn=true);
 
 
             }
@@ -80,6 +92,7 @@ public class LoginController extends Controller implements Initializable {
                     LocalMenuItem.setText("Login");
                     // This resets the event handler such that a client can login again without restarting the application.
                     LocalMenuItem.setOnAction(this::onLogin);
+                    ProfileEdit.setOnAction(this::onLogin);
                     //Ensures that the access to all actions are restricted after logging out.
                     AddCust.setDisable(true);
                     EditCust.setDisable(true);
@@ -96,6 +109,32 @@ public class LoginController extends Controller implements Initializable {
                     SAddLoan.setDisable(true);
                     SEditLoan.setDisable(true);
                     DelLoan.setDisable(true);
+                    EditCust.setVisible(false);
+                    DelCust.setVisible(false);
+                    EditContact.setVisible(false);
+                    DelContact.setVisible(false);
+                    EditAddr.setVisible(false);
+                    DelAddr.setVisible(false);
+                    EditFin.setVisible(false);
+                    DelFin.setVisible(false);
+                    SEditLoan.setVisible(false);
+                    DelLoan.setVisible(false);
+                });
+
+                ProfileEdit.setOnAction(e->{
+                    FXMLLoader fxmlLoader  = new FXMLLoader(getClass().getResource("Profile.fxml"));
+                    try {
+                        Parent parent = fxmlLoader.load();
+                        Scene scene = new Scene(parent);
+                        Stage stage = new Stage();
+                        //Blocks other interactions before it is dealt with.
+                        stage.initModality(Modality.APPLICATION_MODAL);
+                        stage.setScene(scene);
+                        stage.show();
+
+                    } catch (IOException ev) {
+                        ev.printStackTrace();
+                    }
                 });
             }
             // Closes the popup window
@@ -124,13 +163,17 @@ public class LoginController extends Controller implements Initializable {
     }
 
     public void onCheckRegistration(ActionEvent event) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Registration.fxml"));
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("FirstUserCheck.fxml"));
         try {
             Parent parent = loader.load();
             Stage stage = new Stage();
             Scene scene = new Scene(parent);
             stage.setScene(scene);
+            stage.initModality(Modality.APPLICATION_MODAL);
             stage.show();
+            //Defensively consume event
+            event.consume();
         } catch (IOException e) {
             e.printStackTrace();
         }
