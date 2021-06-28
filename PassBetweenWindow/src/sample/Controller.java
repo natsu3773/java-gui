@@ -1,5 +1,6 @@
 package sample;
 
+import DAL.CRUDHandler;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -114,6 +115,18 @@ public class Controller implements Initializable {
             SAddLoan = AddLoan;
             SEditLoan = EditLoan;
             DelLoan = DeleteLoan;
+            EditCust.setVisible(false);
+            DelCust.setVisible(false);
+            EditContact.setVisible(false);
+            DelContact.setVisible(false);
+            EditAddr.setVisible(false);
+            DelAddr.setVisible(false);
+            EditFin.setVisible(false);
+            DelFin.setVisible(false);
+            SEditLoan.setVisible(false);
+            DelLoan.setVisible(false);
+            CRUDHandler crudHandler = new CRUDHandler();
+            crudHandler.getALl();
         //once fxml has been parsed this will run on a thread that can access the JavaFX thread.
         /*
          the next 3 lines create what is essentially an animation that updates every second and gets shown on screen

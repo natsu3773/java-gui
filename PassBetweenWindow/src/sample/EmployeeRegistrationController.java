@@ -15,19 +15,12 @@ import java.util.ResourceBundle;
 
 public class EmployeeRegistrationController extends LoginController implements Initializable {
     @FXML private ComboBox cbxRoles;
-    @FXML private TextField txtEmployeeName;
-    @FXML private TextField txtEmployeeSurname;
     @FXML private TextField txtEmployeeUsername;
 
 
 
     public void onSubmitAddEmployeeRegistration(ActionEvent event) {
-        String name = txtEmployeeName.getText();
-        String surname = txtEmployeeSurname.getText();
         String access = cbxRoles.getSelectionModel().getSelectedItem().toString();
-        GenEmployeeUsername gen = new GenEmployeeUsername();
-        String username = gen.GenerateID(access,name,surname);
-        txtEmployeeUsername.setText(username);
         event.consume();
     }
 

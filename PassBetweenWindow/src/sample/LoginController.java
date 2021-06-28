@@ -53,6 +53,16 @@ public class LoginController extends Controller implements Initializable {
                     SAddLoan.setDisable(false);
                     SEditLoan.setDisable(false);
                     DelLoan.setDisable(false);
+                    EditCust.setVisible(true);
+                    DelCust.setVisible(true);
+                    EditContact.setVisible(true);
+                    DelContact.setVisible(true);
+                    EditAddr.setVisible(true);
+                    DelAddr.setVisible(true);
+                    EditFin.setVisible(true);
+                    DelFin.setVisible(true);
+                    SEditLoan.setVisible(true);
+                    DelLoan.setVisible(true);
                 }
                 // enable buttons for first time on system to complete registration
                 // *NB Still need to add credential check later
@@ -71,6 +81,7 @@ public class LoginController extends Controller implements Initializable {
                 loggedIn=true;
                 LocalMenuItem.setOnAction(event -> loggedIn=true);
                 ProfileEdit.setOnAction(event -> loggedIn=true);
+
 
             }
             // Update the state Variables for the system after logging out
@@ -98,6 +109,16 @@ public class LoginController extends Controller implements Initializable {
                     SAddLoan.setDisable(true);
                     SEditLoan.setDisable(true);
                     DelLoan.setDisable(true);
+                    EditCust.setVisible(false);
+                    DelCust.setVisible(false);
+                    EditContact.setVisible(false);
+                    DelContact.setVisible(false);
+                    EditAddr.setVisible(false);
+                    DelAddr.setVisible(false);
+                    EditFin.setVisible(false);
+                    DelFin.setVisible(false);
+                    SEditLoan.setVisible(false);
+                    DelLoan.setVisible(false);
                 });
 
                 ProfileEdit.setOnAction(e->{
